@@ -103,7 +103,7 @@
     <!-- ================================================================= -->
     <main class="w-full max-w-7xl mx-auto space-y-6 flex-1">
 
-        <!-- Top Parameter Cards (Reddish-Brown Background with Bold White Headings & Bold Green Values) -->
+        <!-- Top Parameter Cards -->
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
             <div class="redish-brown-param-card p-3 rounded-xl border-l-4 border-emerald-400">
                 <div class="text-[11px] text-white font-bold tracking-wide flex justify-between">
@@ -181,7 +181,7 @@
         <!-- Middle Section: Controls, Priority Load Matrix & Real-Time Chart -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            <!-- Fault Control Panel & Load-Shedding Matrix (Whitish-Red Background) -->
+            <!-- Fault Control Panel & Load-Shedding Matrix -->
             <div class="light-panel-card p-5 rounded-2xl space-y-4 lg:col-span-1 shadow-lg">
                 <h2 class="text-base font-bold text-slate-900 border-b border-red-200 pb-2 flex items-center gap-2">
                     <i class="fa-solid fa-sliders text-red-600"></i> Fault & Demand Controls
@@ -211,7 +211,7 @@
                     </p>
                     <div class="space-y-1.5 text-[11px]">
                         <div class="flex justify-between items-center bg-red-50/80 px-2.5 py-1 rounded border border-red-100">
-                            <span class="text-slate-800 font-medium">Tier 1: Critical (Labs/ICU)</span>
+                            <span class="text-slate-800 font-medium">Tier 1: Emergency Load (Hospital/ICU)</span>
                             <span id="tier1Status" class="text-emerald-700 font-bold font-mono">CONNECTED</span>
                         </div>
                         <div class="flex justify-between items-center bg-red-50/80 px-2.5 py-1 rounded border border-red-100">
@@ -265,7 +265,7 @@
                 </button>
             </div>
 
-            <!-- Live Chart Panel (Whitish-Red Background) -->
+            <!-- Live Chart Panel -->
             <div class="light-panel-card p-5 rounded-2xl lg:col-span-2 flex flex-col justify-between shadow-lg">
                 <div class="flex justify-between items-center border-b border-red-200 pb-2 mb-3">
                     <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
@@ -279,7 +279,7 @@
             </div>
         </div>
 
-        <!-- System Event Logs (Whitish-Red Background) -->
+        <!-- System Event Logs -->
         <div class="light-panel-card p-5 rounded-2xl shadow-lg">
             <h2 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2 border-b border-red-200 pb-2">
                 <i class="fa-solid fa-list-check text-red-600"></i> Protection Relay & Alarm Event Log
@@ -307,41 +307,54 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full max-w-7xl mx-auto mt-6 text-center text-xs text-slate-400 border-t border-slate-800 pt-4">
-        <p>© Government Engineering College, Madhubani. Smart Grid Model Presentation.</p>
-        <p class="mt-1.5 text-sm font-extrabold text-red-500 tracking-wide">Designed & Programmed by: Yash Kumar Jha (Electrical Engineering, 2024 Batch)</p>
+    <!-- Footer with Passport Photo & Developer Details in Bottom Right -->
+    <footer class="w-full max-w-7xl mx-auto mt-6 border-t border-slate-800 pt-4 px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-center md:text-left">
+            <p class="text-xs text-slate-400">© Government Engineering College, Madhubani. Smart Grid Model Presentation.</p>
+            <p class="mt-1 text-xs text-slate-400">Department of Electrical Engineering | GridPulse Supervisory Control</p>
+        </div>
+        
+        <!-- Passport Photo & Details on Bottom Right -->
+        <div class="text-center md:text-right bg-slate-900/80 p-3 rounded-2xl border border-red-500/40 shadow-lg flex items-center gap-4">
+            <img src="yash_photo.jpg" alt="Yash Kumar Jha" class="w-16 h-20 md:w-20 md:h-24 object-cover rounded-lg border-2 border-red-500 shadow-md">
+            <div class="text-left">
+                <p class="text-xs font-bold text-white tracking-wide">Developed by : Yash Kumar Jha</p>
+                <p class="text-xs text-slate-300 mt-0.5">Branch : Electrical</p>
+                <p class="text-xs text-slate-300">Batch : 2024</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Report Modal -->
     <div id="reportModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
-        <div class="glass-card max-w-lg w-full rounded-2xl p-6 space-y-4 border border-slate-700 shadow-2xl">
-            <div class="flex justify-between items-center border-b border-slate-700 pb-3">
-                <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-file-medical text-emerald-400"></i> Executive System Diagnostic Report
+        <div class="light-panel-card max-w-lg w-full rounded-2xl p-6 space-y-4 border border-red-300 shadow-2xl text-slate-800">
+            <div class="flex justify-between items-center border-b border-red-200 pb-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-file-medical text-red-600"></i> Executive System Diagnostic Report
                 </h3>
-                <button onclick="closeReportModal()" class="text-slate-400 hover:text-white text-xl">&times;</button>
+                <button onclick="closeReportModal()" class="text-slate-600 hover:text-slate-900 text-xl">&times;</button>
             </div>
-            <div class="space-y-3 text-xs text-slate-300">
-                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
-                    <p class="font-bold text-white mb-1">Institution & Author Information:</p>
+            <div class="space-y-3 text-xs text-slate-700">
+                <div class="bg-white/80 p-3 rounded-xl border border-red-200 shadow-sm">
+                    <p class="font-bold text-slate-900 mb-1">Institution & Author Information:</p>
                     <p>• <strong>College:</strong> Government Engineering College, Madhubani</p>
-                    <p>• <strong>Developer:</strong> <span class="text-red-400 font-bold">Yash Kumar Jha</span> (E.E. 2024 Batch)</p>
+                    <p>• <strong>Developer:</strong> <span class="text-red-700 font-bold">Yash Kumar Jha</span> (E.E. 2024 Batch)</p>
                     <p>• <strong>Project:</strong> GridPulse — Microgrid Telemetry & Fault Diagnostic Model</p>
                 </div>
-                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 space-y-1">
-                    <p class="font-bold text-white mb-1">Current Grid Diagnostics:</p>
-                    <p>• <strong>System Operating Mode:</strong> <span id="reportSysMode" class="text-emerald-400 font-bold">Grid-Tied (Utility Active)</span></p>
-                    <p>• <strong>Harmonic THD:</strong> <span id="reportTHD">2.4% (IEEE-519 Compliant)</span></p>
-                    <p>• <strong>Power Factor (cos φ):</strong> <span id="reportPF">0.95</span></p>
-                    <p>• <strong>AI Health Index:</strong> <span id="reportHealthIdx" class="text-emerald-400 font-bold">98.5% (Optimal)</span></p>
+                <div class="bg-white/80 p-3 rounded-xl border border-red-200 shadow-sm space-y-1">
+                    <p class="font-bold text-slate-900 mb-1">Current Grid Diagnostics:</p>
+                    <p>• <strong>System Operating Mode:</strong> <span id="reportSysMode" class="text-emerald-700 font-bold">Grid-Tied (Utility Active)</span></p>
+                    <p>• <strong>Bus Voltage:</strong> <span id="reportVoltage" class="font-mono font-bold text-slate-900">230.0 V</span></p>
+                    <p>• <strong>Harmonic THD:</strong> <span id="reportTHD" class="font-mono font-bold">2.4% (IEEE-519 Compliant)</span></p>
+                    <p>• <strong>Power Factor (cos φ):</strong> <span id="reportPF" class="font-mono font-bold">0.95</span></p>
+                    <p>• <strong>AI Health Index:</strong> <span id="reportHealthIdx" class="text-emerald-700 font-bold">98.5% (Optimal)</span></p>
                 </div>
             </div>
             <div class="flex gap-3 pt-2">
-                <button onclick="window.print()" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                <button onclick="window.print()" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md">
                     <i class="fa-solid fa-print"></i> Print Report
                 </button>
-                <button onclick="closeReportModal()" class="flex-1 bg-slate-700 hover:bg-slate-600 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                <button onclick="closeReportModal()" class="flex-1 bg-slate-700 hover:bg-slate-600 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md">
                     Close
                 </button>
             </div>
@@ -477,7 +490,7 @@
                 document.getElementById('pfVal').innerText = currentPF.toFixed(2);
                 document.getElementById('freqVal').innerText = "50.0 Hz";
                 document.getElementById('solarVal').innerText = "0.0 kW";
-                document.getElementById('bessSub').innerText = "Island Mode (Discharging)";
+                document.getElementById('bessSub').innerText = "Emergency Mode (Discharging)";
                 document.getElementById('thdVal').innerText = harmonicTHD.toFixed(1) + "%";
             } else {
                 let noiseV = (Math.random() - 0.5) * 1.5;
@@ -643,22 +656,21 @@
             tier2Active = false;
             tier3Active = false;
 
-            document.getElementById('tier1Status').innerText = "ISLAND MODE (ACTIVE)";
-            document.getElementById('tier1Status').className = "text-yellow-700 font-bold font-mono";
+            document.getElementById('tier1Status').innerHTML = '<span class="text-slate-700">EMERGENCY LOAD</span> <span class="text-emerald-700">ACTIVE</span>';
             document.getElementById('tier2Status').innerText = "SHED (OFF)";
             document.getElementById('tier2Status').className = "text-red-700 font-bold font-mono";
             document.getElementById('tier3Status').innerText = "SHED (OFF)";
             document.getElementById('tier3Status').className = "text-red-700 font-bold font-mono";
-            document.getElementById('sheddingStatus').innerText = "Island Mode Active (BESS Backup)";
+            document.getElementById('sheddingStatus').innerText = "Emergency Mode Active (BESS Backup)";
 
-            document.getElementById('systemModeBadge').innerText = "Island Mode";
+            document.getElementById('systemModeBadge').innerText = "Emergency Mode";
             document.getElementById('systemModeBadge').className = "text-yellow-700 font-bold uppercase";
 
             document.getElementById('voltageSub').innerText = "BESS BACKUP ACTIVE";
             document.getElementById('voltageSub').className = "text-[11px] text-amber-700 font-bold";
             
             playEmergencySiren();
-            logEvent("ISLAND_MODE", "Utility grid tripped. Microgrid successfully islanded on BESS backup.", "ISLANDED");
+            logEvent("EMERGENCY_MODE", "Utility grid tripped. Microgrid successfully transitioned to Emergency Load Active on BESS backup.", "EMERGENCY");
         }
 
         function resetGridNormal() {
@@ -701,9 +713,9 @@
             const timeStr = new Date().toLocaleTimeString();
             
             let statusBadge = `<span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-semibold border border-blue-300">${status}</span>`;
-            if (status === "CRITICAL" || status === "TRIPPED") {
+            if (status === "CRITICAL" || status === "TRIPPED" || status === "EMERGENCY") {
                 statusBadge = `<span class="bg-red-100 text-red-800 font-bold px-2 py-0.5 rounded border border-red-300">${status}</span>`;
-            } else if (status === "HEALTHY" || status === "COMPENSATED" || status === "ISLANDED" || status === "SUCCESS") {
+            } else if (status === "HEALTHY" || status === "COMPENSATED" || status === "SUCCESS") {
                 statusBadge = `<span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded border border-emerald-300">${status}</span>`;
             }
 
@@ -721,7 +733,7 @@
             document.getElementById('reportPF').innerText = currentPF.toFixed(2);
             document.getElementById('reportTHD').innerText = harmonicTHD.toFixed(1) + "% (IEEE-519 Compliant)";
             document.getElementById('reportHealthIdx').innerText = aiHealthIndex.toFixed(1) + "%";
-            document.getElementById('reportSysMode').innerText = breakerTripped ? "Island Mode (BESS Backup)" : "Grid-Tied (Utility Active)";
+            document.getElementById('reportSysMode').innerText = breakerTripped ? "Emergency Mode (BESS Backup)" : "Grid-Tied (Utility Active)";
             document.getElementById('reportModal').classList.remove('hidden');
             document.getElementById('reportModal').classList.add('flex');
         }
